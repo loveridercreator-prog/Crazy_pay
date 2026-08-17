@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "framework": null,
+  "buildCommand": "mkdir -p dist/assets && cp index.html dist/index.html && cp upiDeepLinkHandler.js dist/upiDeepLinkHandler.js && (cp logo.png dist/logo.png 2>/dev/null || true) && (cp -r public/* dist/ 2>/dev/null || true) && (cp -r assets/* dist/assets/ 2>/dev/null || true) && (cp app/build/outputs/apk/debug/app-debug.apk dist/app-debug.apk || cp .build-outputs/app-debug.apk dist/app-debug.apk || echo 'No APK found')",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/app-debug.apk",
+      "destination": "/app-debug.apk"
+    },
+    {
+      "source": "/download",
+      "destination": "/app-debug.apk"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/app-debug.apk",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/vnd.android.package-archive"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"CrazyPay.apk\""
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0, s-maxage=0"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0, s-maxage=0"
+        },
+        {
+          "key": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "key": "Expires",
+          "value": "0"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "CrazyPay",
+  "description": "CrazyPay P2P Discounted Auto-UTR Validation Engine: A zero-cost, high-volume automated UTR verification and payment match system for P2P Escrow platforms. Features 1-99 Paisa dynamic amount discounting, zero-cost NetBanking statement scraper feed, instant auto-matching & escrow release, AI screenshot forensics (ELA + OCR), and backend code/SQL schema exporter.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
